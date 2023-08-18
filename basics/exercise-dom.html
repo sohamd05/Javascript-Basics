@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Exercise</title>
+    </head>
+
+    <body>
+
+        <button  onclick = "
+            console.log(document.querySelector('button'));
+            
+        ">9a</button>
+
+        <button class = "js-button" >9b</button>
+        <br>
+        <br>
+        <br>
+        <br>
+       <input class = "js-search" placeholder = "Enter your name" onkeydown = "
+            result(event);
+       ">
+        <button onclick = "
+            takeName();
+        ">Submit</button>
+        <p class  = "js-paraa"></p>
+
+        <script>
+            console.log(document.querySelector('.js-button').innerHTML);
+            document.querySelector('.js-button').innerHTML = '9b done!';
+
+            function takeName(){
+                const name = document.querySelector('.js-search');
+                //console.log( name);
+                let text = name.value;
+                //console.log( text );
+                document.querySelector('.js-paraa').innerHTML = `Your Name is ${text}`;
+            }
+
+            function result(event){
+                if(event.key === 'Enter'){
+                    takeName();
+                }
+            }   
+        </script>
+    </body>
+</html>

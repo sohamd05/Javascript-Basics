@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            body{
+                background-color: black;
+            }
+
+            p{
+                font-size : 20px;
+                color : white;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-right : 30px;
+            }
+
+            button{
+                background-color: rgb(51, 49, 49);
+                height : 50px;
+                width : 50px;
+                border-radius: 25px;
+                border : none;
+                font-size : 25px;
+                font-weight: bold;
+            }
+
+            .number{
+                color : white;
+                font-family : Arial, Helvetica, sans-serif;
+            }
+
+            .sign{
+                color : rgb(45, 236, 45);
+            }
+
+            .equalto{
+                background-color: rgb(45, 236, 45);
+                color : white;
+            }
+
+            .clear{
+                color : rgb(237, 69, 69);
+                font-size : 17px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class = "js-numbers"></p>
+       <p>
+        <button class = "number" onclick = "
+            updateCalculation('1');
+           
+        ">1</button>
+
+        <button class = "number" onclick = "
+            updateCalculation('2');
+            
+        ">2</button>
+
+        <button class = "number" onclick = "
+            updateCalculation('3');
+           
+        ">3</button>
+
+        <button class = "sign" onclick = "
+           updateCalculation(' + ')
+           
+        ">+</button>
+
+       </p>
+       <p>
+        <button class = "number" onclick = "
+            updateCalculation('4')
+           
+        ">4</button>
+
+        <button class = "number" onclick = "
+            updateCalculation('5')
+           
+        ">5</button>
+
+        <button class = "number" onclick = "
+           updateCalculation('6')
+           
+        ">6</button>
+
+        <button class = "sign" onclick = "
+            updateCalculation(' - ')
+           
+        ">-</button>
+       </p>
+
+       <p>
+        <button class = "number" onclick = "
+            updateCalculation('7')
+           
+        ">7</button>
+
+        <button class = "number" onclick = "
+           updateCalculation('8')
+           
+        ">8</button>
+
+        <button class = "number" onclick = "
+            updateCalculation('9')
+           
+        ">9</button>
+
+        <button class = "sign" onclick = "
+            updateCalculation(' * ')
+           
+        ">*</button>
+       </p>
+     
+       <p>
+        <button class = "number" onclick = "
+           updateCalculation('.')
+           
+        ">.</button>
+
+        <button class = "number" onclick = "
+            updateCalculation('0')
+           
+        ">0</button>
+
+        <button class = "equalto" onclick = "
+            calculation = eval(calculation);
+            display();
+            localStorage.setItem('calculation',calculation);
+        ">=</button>
+
+        <button class = "sign" onclick = "
+            calculation += ' / ';
+           
+        ">/</button>
+       </p>
+
+       <p>
+        <button class = "clear" onclick = "
+            calculation = '';
+            display();
+            localStorage.setItem('calculation',calculation);           
+        ">clear</button>
+       </p>
+       
+
+        <script>
+            let calculation = '' || localStorage.getItem('calculation');
+
+
+            function updateCalculation(value){
+                calculation += value;
+                display();
+                localStorage.setItem('calculation', calculation);
+            }
+
+            function display(){
+                document.querySelector('.js-numbers').innerHTML = calculation;
+            }
+        </script>
+    </body>
+</html>

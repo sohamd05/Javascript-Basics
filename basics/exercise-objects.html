@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects exercise</title>
+    </head>
+    <body>
+
+        <script>
+            basketball = {
+                price : 2095,
+                'delivery-time' : '3 days'
+            }
+
+            console.log(basketball);
+            basketball.price = 2095 + 500;
+            console.log(basketball);
+            //console.log( JSON.stringify(basketball));
+            console.log( basketball['delivery-time']);
+
+            product1 = {
+                shirt : 'Tshirt',
+                price : 50,
+            }
+
+            product2 = product1;
+
+            compareProducts(product1, product2);
+            console.log(comparePrice(product1, product2));
+
+            function compareProducts(a, b) {
+                console.log( a=== b);
+            }
+
+            function comparePrice(a,b){
+                let lessprice = a.price > b.price ? b.price : a.price;
+                return lessprice;
+            }
+
+
+            //convert to lowercase
+            let text = 'soham';
+            let result = text.repeat(2);
+            console.log('SOHAM'.toLowerCase());
+            console.log(result);
+        </script>
+    </body>
+</html>

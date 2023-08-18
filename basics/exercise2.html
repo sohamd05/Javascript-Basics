@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 2</title>
+    </head>
+    <body>
+        <p>List</p>
+        <p>Coffee : $5</p>
+        <p>Bagel : $3</p>
+        <p>Soup : $9</p>
+        
+    <button onclick = "
+            cartQuantity += 5;
+            tax = 0.1*cartQuantity;
+            result = cartQuantity - tax;
+            console.log(`Your Order is : ${cartQuantity}`);
+        ">
+        Coffee
+    </button>
+
+        <button onclick = "
+            cartQuantity += 3 ;
+            tax = 0.1*cartQuantity;
+            result = cartQuantity - tax;
+            console.log(`Your Order is : ${result}`);
+        ">Bagel
+        </button> 
+
+        <button onclick = "
+            cartQuantity += 9;
+            tax = 0.1*cartQuantity;
+            result = cartQuantity - tax;
+            console.log(`Your Order is : ${result}`);
+        ">Soup</button>
+
+    
+        <button onclick = "
+        cartQuantity = 0;
+        console.log('Cart was Reset');
+        console.log(`Your Order is : ${result}`);
+        ">
+        Reset Cart
+        </button>
+
+        <script>
+            let cartQuantity = 0;
+            let tax ,result = 0;
+            
+        </script>
+    </body>
+</html>
